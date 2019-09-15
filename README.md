@@ -64,6 +64,7 @@ Jawaban : File > Export Objects > HTTP… > Text Filter : ckedokteran.png > Save
 Kendala yang dialami : file yang dicari tidak muncul
 
 4.	Cari charset dari halaman "ajk.if.its.ac.id"
+
 Jawaban : 
 Display Filter : http == “ajk.if.its.ac.id" > klik kanan salah satu packet >Follow > HTTP stream > find : charset
  
@@ -81,3 +82,103 @@ Display Filter : http.request.method == POST && http.host == "freeshare.lp.if.it
 ![display5 2](https://user-images.githubusercontent.com/42793740/64920499-955d2100-d7e2-11e9-81dd-7b72036151ed.png)
 
 Kendala yang dialami : tidak ada paket yang memenuhi syarat display filter
+
+6.	Sebutkan web server yang digunakan pada "www.ne.its.ac.id"
+
+http.host == “www.ne.its.ac.id”
+
+![6 1](https://user-images.githubusercontent.com/42793740/64920608-06510880-d7e4-11e9-8cca-8a0caf3df5d4.png)
+
+right click kemudian follow
+
+![6 2](https://user-images.githubusercontent.com/42793740/64920609-06e99f00-d7e4-11e9-83c4-cc19521e68df.png)
+	
+di kolom find cari “server”
+ 
+![6 3](https://user-images.githubusercontent.com/42793740/64920610-06e99f00-d7e4-11e9-825d-b85fb46f85fa.png)
+![6 4](https://user-images.githubusercontent.com/42793740/64920611-06e99f00-d7e4-11e9-9a70-2d1057858f2c.png) 
+
+7.	Sebutkan versi PHP dan yang digunakan pada "riset.ajk.if.its.ac.id"
+
+http.host == "riset.ajk.if.its.ac.id"
+ 
+![7 1](https://user-images.githubusercontent.com/42793740/64920612-07823580-d7e4-11e9-95c5-547b83073709.png)
+
+right click kemudian follow
+
+![7 2](https://user-images.githubusercontent.com/42793740/64920613-07823580-d7e4-11e9-9b97-77904a619f97.png)
+	
+di kolom find cari “php”
+ 
+![7 3](https://user-images.githubusercontent.com/42793740/64920614-07823580-d7e4-11e9-998a-86acb8492d24.png)
+![7 4](https://user-images.githubusercontent.com/42793740/64920615-081acc00-d7e4-11e9-8eec-259a23e53dd9.png) 
+
+8.	Filter pada wireshark kalian sehingga menampilkan hasil ping
+
+icmp
+
+![8](https://user-images.githubusercontent.com/42793740/64920616-081acc00-d7e4-11e9-8862-22fcf3dff2ed.png)
+
+9.	Dapatkan semua metode GET yang mengakses "monta.if.its.ac.id"
+
+http.host == "monta.if.its.ac.id" && http.request.method == GET
+
+![9](https://user-images.githubusercontent.com/42793740/64920617-081acc00-d7e4-11e9-95b7-3d5dbc0c7fe3.png)
+
+10.	Tunjukkan username dan password yang dimasukkan ketika login FTP
+
+ftp.request.command == USER || ftp.request.command == PASS
+
+![10](https://user-images.githubusercontent.com/42793740/64920618-08b36280-d7e4-11e9-8248-54e6d6e3c795.png)
+
+11. 	Tunjukkan di wireshark, paket mana yang dikirimkan FTP client ketika upload file "qwpeaspojdasjfpasjfpaosuhuy.jpg"
+
+ftp.request.command == STOR && ftp.request.arg == "qwpeaspojdasjfpasjfpaosuhuy.jpg"
+ 
+![11](https://user-images.githubusercontent.com/42793740/64920619-08b36280-d7e4-11e9-9ca6-618874991056.png)
+
+12.	Tunjukkan di wireshark, paket mana yang dikirimkan FTP client ketika menghapus file "qwpeaspojdasjfpasjfpaos.jpg"
+
+ftp.request.command == DELE && ftp.request.arg == "qwpeaspojdasjfpasjfpaosuhuy.jpg"
+
+![12](https://user-images.githubusercontent.com/42793740/64920620-094bf900-d7e4-11e9-94a2-80a1fcac35fb.png)
+
+13. 	Tunjukkan di wireshark, paket mana yang dikirimkan FTP client ketika mengganti nama file "sutlin.png"
+
+ftp.request.command == RNFR && ftp.request.arg == "sutlin.png"
+
+![13](https://user-images.githubusercontent.com/42793740/64920621-094bf900-d7e4-11e9-8414-de74ec7b51a2.png)
+
+14.	Tunjukkan di wireshark, paket mana yang dikirimkan FTP client ketika download file "sutlun.png"
+
+ftp.request.command == RETR && ftp.request.arg == "sutlun.png"
+ 
+![14](https://user-images.githubusercontent.com/42793740/64920622-09e48f80-d7e4-11e9-9df0-5e389570efdc.png)
+ 
+ 
+15.	Cari file .zip di wireshark lalu download dan extract file tersebut clue: "50 4B 03 04"
+
+search di panel find, set menjadi hex value "50 4B 03 04"
+
+![15 1](https://user-images.githubusercontent.com/42793740/64920623-0a7d2600-d7e4-11e9-80a8-35298708563e.png)
+
+pilih salah satu packet, right click kemudian follow
+
+![15 2](https://user-images.githubusercontent.com/42793740/64920624-0a7d2600-d7e4-11e9-84be-3a84bef0656a.png)
+
+right click kemudian follow, pilih TCP stream
+
+![15 3](https://user-images.githubusercontent.com/42793740/64920625-0a7d2600-d7e4-11e9-8ac2-320653bfd8e1.png)
+
+Show and save data as Raw
+ 
+![15 4](https://user-images.githubusercontent.com/42793740/64920627-0b15bc80-d7e4-11e9-9b79-60b5e162fab4.png)
+
+save as hudsafhufaso.zip
+
+![15 5](https://user-images.githubusercontent.com/42793740/64920628-0b15bc80-d7e4-11e9-931e-7c4f8c0664e2.png)
+
+terakhir extract zip tersebut
+
+![15 6](https://user-images.githubusercontent.com/42793740/64920629-0b15bc80-d7e4-11e9-85b9-6e23608bf67a.png)
+ 
